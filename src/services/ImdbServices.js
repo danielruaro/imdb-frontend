@@ -1,6 +1,9 @@
 import axios from "axios";
 
-const url = process.env.REACT_APP_API_URL;
+const url =
+  process.env.NODE_ENV !== "production"
+    ? "https://localhost:3001/"
+    : process.env.REACT_APP_API_URL;
 
 class ImdbServices {
   async getMovies(loadCount) {
