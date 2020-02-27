@@ -1,5 +1,8 @@
 import axios from "axios";
 
+console.log(`envs`);
+console.log(process.env);
+
 const url =
   process.env.NODE_ENV !== "production"
     ? "https://localhost:3001/"
