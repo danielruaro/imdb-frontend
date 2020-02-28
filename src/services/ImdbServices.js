@@ -1,11 +1,9 @@
 import axios from "axios";
 
-const url = process.env.REACT_APP_API_URL;
-
 class ImdbServices {
   async getMovies(loadCount) {
     return await axios
-      .get(url + `movies?page=${loadCount}`)
+      .get(process.env.REACT_APP_API_URL + `movies?page=${loadCount}`)
       .then(function({ data }) {
         return data.results;
       })
@@ -16,7 +14,7 @@ class ImdbServices {
 
   async searchMovies(param) {
     return await axios
-      .get(url + `search?movie=${param}`)
+      .get(process.env.REACT_APP_API_URL + `search?movie=${param}`)
       .then(function({ data }) {
         return data.results;
       })
@@ -27,7 +25,7 @@ class ImdbServices {
 
   async getGenre(param) {
     return await axios
-      .get(url + `genre/${param}`)
+      .get(process.env.REACT_APP_API_URL + `genre/${param}`)
       .then(function({ data }) {
         return data.genre;
       })
