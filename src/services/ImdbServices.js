@@ -1,15 +1,6 @@
 import axios from "axios";
-import dotenv from "dotenv";
 
-dotenv.config();
-
-console.log(`envs`);
-console.log(process.env);
-
-const url =
-  process.env.NODE_ENV !== "production"
-    ? "https://localhost:3001/"
-    : process.env.REACT_APP_API_URL;
+const url = process.env.REACT_APP_API_URL;
 
 class ImdbServices {
   async getMovies(loadCount) {
